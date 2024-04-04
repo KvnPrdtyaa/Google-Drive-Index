@@ -56,8 +56,9 @@ const authConfig = {
   },
   ]
 };
-const crypto_base_key = "a4affcad11ea4c7f696e63edaf92095e" // Example 256 bit key used.
-const encrypt_iv = new Uint8Array([38,100,240,76,189,111,227,246,178,254,115,201,91,244,245,171]); // Example 128 bit IV used.
+const crypto_base_key = "3225f86e99e205347b4310e437253bfd" // Example 256 bit key used, generate your own.
+const hmac_base_key = "4d1fbf294186b82d74fff2494c04012364200263d6a36123db0bd08d6be1423c" // Example 256 bit key used, generate your own.
+const encrypt_iv = new Uint8Array([247, 254, 106, 195, 32, 148, 131, 244, 222, 133, 26, 182, 20, 138, 215, 81]); // Example 128 bit IV used, generate your own.
 const uiConfig = {
   "theme": "darkly", // switch between themes, default set to slate, select from https://gitlab.com/GoogleDriveIndex/Google-Drive-Index
   "version": "2.3.6", // don't touch this one. get latest code using generator at https://bdi-generator.hashhackers.com
@@ -673,17 +674,26 @@ async function decryptString(encryptedString) {
   return decryptedString;
 }
 
-async function genIntegrity(data) {
+// Web Crypto Integrity Generate API
+async function genIntegrity(data, key = hmac_base_key) {
   const encoder = new TextEncoder();
   const dataBuffer = encoder.encode(data);
+  const hmacKey = await crypto.subtle.importKey(
+      'raw',
+      encoder.encode(key), {
+          name: 'HMAC',
+          hash: 'SHA-256'
+      },
+      false,
+      ['sign']
+  );
+  const hmacBuffer = await crypto.subtle.sign('HMAC', hmacKey, dataBuffer);
 
-  const hashBuffer = await crypto.subtle.digest('SHA-256', dataBuffer);
+  // Convert the HMAC buffer to hexadecimal string
+  const hmacArray = Array.from(new Uint8Array(hmacBuffer));
+  const hmacHex = hmacArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
 
-  // Convert the hash buffer to hexadecimal string
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-
-  return hashHex;
+  return hmacHex;
 }
 
 async function checkintegrity(text1, text2) {
