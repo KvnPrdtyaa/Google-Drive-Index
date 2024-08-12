@@ -1,7 +1,6 @@
 let len = window.drive_names.length;
 let html = "";
 html = `<div class="card">
-<div class="card-header">❤️&nbsp; Roots of Everythings</div>
 <div id="list" class="list-group list-group-flush">`
 for (var i = 0; i < len; i++) {
 html += `<a href="/`+i+`:/" style="color: ${UI.folder_text_color};" class="list-group-item list-group-item-action d-flex justify-content-start align-items-center gap-2">
