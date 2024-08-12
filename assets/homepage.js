@@ -19,3 +19,5 @@ html += `<a href="/`+i+`:/" style="color: ${UI.folder_text_color};" class="list-
 }
 $('#n_drives').html(len);
 $('#list').html(html);
+
+// test
