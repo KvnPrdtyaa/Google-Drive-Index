@@ -17,7 +17,7 @@ function init() {
 			<div class="card">
 				<nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
 					<ol class="breadcrumb" id="folderne">
-						<li class="breadcrumb-item"><a href="/">Index of /</a></li>`;
+						<li class="breadcrumb-item"><a href="/">Index of</a></li>`;
     var navfulllink = window.location.pathname;
     var navarray = navfulllink.trim('/').split('/');
     var currentPath = '/';
@@ -66,40 +66,20 @@ function init() {
 				<div class="card-header">
 					<i class="fa-solid fa-mug-hot fa-fw"></i>Donate a coffee
 				</div>
-            	<div class="card-body d-flex align-items-center justify-content-center">
-					<div class="donate btn-group">
-						<a class="btn" href="https://trakteer.id/jovanzers/tip" title="Click me!" style="background: #BE1E2D;" target="_blank">
-						<i class="fab fa-paypal"></i>Trakteer </a>
-						<a class="btn" href="https://paypal.me/jovanzers" title="Click me!" style="background-color: #0079C1;" target="_blank">
-						<i class="fab fa-paypal"></i>PayPal </a>
-						<div class="qrcode card" style="padding: 1rem 1rem 0 1rem;">
-							<div style="padding-bottom: 1rem;">Thank you very much ❤</div>
-							<img alt="Love" src="https://sharer.winten.my.id/static/img/love.png">
-						</div>
-						<a class="btn" href="https://saweria.co/jovanzers" title="Click me!" style="background: #f5a623FF;" target="_blank">
-						<i class="fab fa-paypal"></i>Saweria </a>
-					</div>
-            	</div>
+        <div class="card-body d-flex flex-wrap gap-2 justify-content-evenly align-items-center">
+              <a href="https://ko-fi.com/springler" target="_blank" title="Click me!">
+                <img class="image" alt="Ko-fi" style="height: 32px;" src="https://i.imgur.com/HFGb10v.png">
+              </a>
+              <a href="" target="_blank" title="Click me!">
+                <img class="image" alt="BTC" style="height: 32px;" src="https://i.imgur.com/2dPu02r.png">
+              </a>
+              <a href="" target="_blank" title="Click me!">
+                <img class="image" alt="TON" style="height: 32px;" src="https://i.imgur.com/RNnkdhN.png">
+              </a>
+              <a href="" target="_blank" title="Click me!">
+                <img class="image" alt="NOT" style="height: 32px;" src="https://i.imgur.com/C8NozBr.png">
+              </a>
         	</div>
-        </div>
-        <div class="col-lg-6 col-md-12">
-          	<div class="card text-white mb-3 h-100">
-            	<div class="card-header">
-              		<i class="fa-regular fa-snowflake fa-fw"></i>Sponsors
-            	</div>
-            	<div class="card-body d-flex flex-wrap gap-2 justify-content-evenly align-items-center">
-					<a href="https://akannikah.id" target="_blank" title="Akannikah.id">
-						<img class="image" alt="Akannikah.id" style="height: 32px;" src="https://sharer.winten.my.id/static/img/Akannikah.id.png">
-					</a>
-					<a href="https://merakit.co.id" target="_blank" title="Merakit Indonesia">
-						<img class="image" alt="Merakit Indonesia" src="https://sharer.winten.my.id/static/img/merakit.co.id.png">
-					</a>
-					<a href="https://eksan127.github.io/paperplane" target="_blank" title="Paper Plane">
-						<img class="image" alt="Paper Plane" style="width: 32px;" src="https://sharer.winten.my.id/static/img/PaperPlane.png">
-					</a>
-					<a href="https://azhe.my.id" target="_blank" title="azhe403">azhe403</a>
-            	</div>
-          	</div>
         </div>
     </div>	
 </div>
@@ -2030,12 +2010,6 @@ async function file(path) {
       $('#content').html(content);
     });
 }
-
-const trakteerWidget = `<div class="col-md-12">
-<div class="card" style="padding: 0 0 0.3rem 0;border-radius:.5rem;width:100%;overflow:hidden;">
-  <iframe src="https://stream.trakteer.id/running-text-default.html?rt_font=Lato&amp;rt_count=6&amp;rt_speed=normal&amp;rt_theme=default&amp;rt_1_clr1=rgba%280%2C+0%2C+0%2C+0%29&amp;rt_2_clr1=rgba%28190%2C+30%2C+45%2C+1%29&amp;rt_2_clr2=rgba%28255%2C+255%2C+255%2C+1%29&amp;rt_2_clr3=rgba%28255%2C+200%2C+73%2C+1%29&amp;rt_septype=image&amp;rt_messages=Donasi+via+%26nbsp%3B%3Ca+href%3D%27https%3A%2F%2Ftrakteer.id%2Fjovanzers%2Ftip%27+style%3D%27color%3A%23FFC849%3B+text-decoration%3A+none%3B%27+target%3D%27_blank%27%3ETrakteer%3C%2Fa%3E+%2F+%26nbsp%3B%3Ca+href%3D%27https%3A%2F%2Fsaweria.co%2Fjovanzers%27+style%3D%27color%3A%23FFC849%3B+text-decoration%3A+none%3B%27+target%3D%27_blank%27%3ESaweria%3C%2Fa%3E&amp;rt_txtshadow=false&amp;creator_name=jovanzers&amp;page_url=trakteer.id/jovanzers&amp;mod=3&amp;key=trstream-0Cd1Li6Gi6gLtK6GT84w&amp;hash=q07y4nqv7kp4wkxv" height="40px" width="100%" style="border:none; color-scheme: light;"></iframe>
-</div>
-</div>`;
 
 const copyButton = `<button onclick="copyFunction()" onmouseout="outFunc()" class="btn btn-primary"><span class="tooltiptext" id="myTooltip"><i class="fas fa-copy fa-fw"></i>Copy</span></button>`;
 
