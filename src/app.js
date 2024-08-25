@@ -556,13 +556,6 @@ function list(path, id = '', fallback = false) {
 	<div class="card">
 		<div class="card-header d-flex align-items-center gap-2">
 			<span>${folder_ico}</span><span class="w-100 text-truncate" id="dirname">${folder_name}</span>
-			${
-        folder_name !== drive_name
-          ? '<a class="d-flex align-items-center d-none" href="#" id="sharer" target="_blank" title="via Google Drive">' +
-            gdrive_icon +
-            '</a>'
-          : ``
-      }
 		</div>
 		<div id="list" class="list-group list-group-flush text-break">
 		</div>
