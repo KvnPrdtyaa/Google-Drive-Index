@@ -60,11 +60,11 @@ function init() {
       UI.fixed_footer ? ' padding-bottom: clamp(170px, 100%, 300px);' : ''
     }"></div>
 	</div>
-	<div class="row g-3 mt-0">
-        <div class="col-lg-6 col-md-12">
-          	<div class="card text-white mb-3 h-100">
+	<div class="row align-items-start g-3 justify-content-center mt-5">
+        <div class="col-lg-6">
+          	<div class="card text-white mt-5 h-100">
 				<div class="card-header">
-					<i class="fa-solid fa-mug-hot fa-fw"></i>Donate a coffee
+					Support Us
 				</div>
         <div class="card-body d-flex flex-wrap gap-2 justify-content-evenly align-items-center">
               <a href="https://ko-fi.com/springler" target="_blank" title="Click me!">
